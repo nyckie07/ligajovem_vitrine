@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Vitrines - Portfólio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="./images/mechanical.png">
+    <!-- Ícones para redes sociais -->
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+  <body>
+    <!-- Navbar personalizada -->
+    <nav class="portfolio-navbar">
+      <div class="navbar-container">
+        <div class="site-name">Vitrines</div>
+        
+        <div class="menu-section">
+          <span class="menu-label">PORTFÓLIO</span>
+          <div class="menu-tabs">
+            <a href="#" class="menu-tab active">Projetos</a>
+            <a href="#" class="menu-tab">Categorias</a>
+            <a href="#" class="menu-tab more-tab">Mais<span class="dropdown-arrow">▼</span></a>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+      <div class="welcome-section">
+        <h1>Bem-vindo ao Vitrines</h1>
+        <p class="description">Seu espaço para exibir e organizar todos os seus projetos em um só lugar.</p>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <div class="project-title">Sistema de Gerenciamento</div>
+            <div class="project-date">Concluído em: Janeiro 2023</div>
+          </div>
+        </div>
+        
+        <p class="project-description">
+          Um sistema completo desenvolvido para gerenciamento e organização projetos, com painel Projeto e relatórios escritos.
+        </p>
+        
+        <div class="project-skills">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">MongoDB</span>
+        </div>
+        
+        <div class="screenshots">
+          <div class="screenshots-title">Imagens do Projeto</div>
+          <div class="screenshot-grid">
+            <div class="screenshot" data-item="projeto1">
+              <img src="./images/dashboard.jpg" alt="projeto1">
+              <span>Projeto 1</span>
+            </div>
+            <div class="screenshot" data-item="projeto2">
+              <img src="./images/thumb_dashboard.jpg" alt="projeto2">
+              <span>Projeto 2</span>
+            </div>
+            <div class="screenshot" data-item="projeto3">
+              <img src="./images/thumb_2.jpg" alt="projeto3">
+              <span>Projeto 3</span>
+            </div>
+            <div class="screenshot" data-item="projeto4">
+              <img src="./images/thumb_dashboard.jpg" alt="projeto4">
+              <span>Projeto 4</span>
+            </div><div class="screenshot" data-item="projeto9">
+              <img src="./images/thumb_dashboard.jpg" alt="projeto5">
+              <span>Projeto 5</span>
+            </div>
+            <div class="screenshot" data-item="projeto5">
+              <img src="./images/thumb_dashboard.jpg" alt="projeto6">
+              <span>Projeto 6</span>
+            </div>
+            <div class="screenshot" data-item="projeto6">
+              <img src="./images/thumb_dashboard.jpg" alt="Mobile">
+              <span>Projeto 7</span>
+            </div>
+            <div class="screenshot" data-item="projeto7">
+              <img src="./images/thumb_dashboard.jpg" alt="Mobile">
+              <span>Projeto 8</span>
+            </div>
+            <div class="screenshot" data-item="projeto8">
+              <img src="./images/thumb_dashboard.jpg" alt="Mobile">
+              <span>Projeto 9</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <!-- Pop-up Multifuncional -->
+<div id="contentPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    
+    <div class="popup-header">
+      <!-- nome para mudar no projeto -->
+      <h2 id="popupTitle">Projeto 1</h2>
+      <div id="itemViews" class="subscribers">17 visualizações estimadas</div>
+      
+      <!-- Botões de alternância -->
+      <div class="content-switcher">
+        <button class="switch-btn active" data-content="image">
+          <i class="fas fa-image"></i> Imagem
+        </button>
+        <button class="switch-btn" data-content="text">
+          <i class="fas fa-align-left"></i> Texto
+        </button>
+        <button class="switch-btn" data-content="project" id="projectBtn">
+          <i class="fas fa-cube"></i> Projeto
+        </button>
+      </div>
+    </div>
+    
+    <!-- Área de conteúdo -->
+    <div class="popup-body">
+      <!-- Conteúdo de Imagem -->
+      <div id="image-content" class="content active">
+        <img id="popupImage" src="" alt="">
+      </div>
+      <div id="image-content" class="content active">
+        <img id="popupImage" src="" alt="">
+      </div>
+      <!-- Conteúdo de Texto -->
+      <div id="text-content" class="content">
+        <div class="text-content">
+          <p id="itemDescription">Descrição do item...</p>
+        </div>
+      </div>
+      
+      <!-- Conteúdo de Projeto (inicialmente vazio) -->
+      <div id="project-content" class="content">
+        <div class="project-loading">
+          <i class="fas fa-spinner fa-spin"></i> Carregando projeto...
+        </div>
+        <div class="project-viewer" style="display:none">
+          <iframe id="projectFrame" sandbox="allow-scripts allow-same-origin"></iframe>
+          <div class="project-controls">
+            <button onclick="reloadProject()">
+              <i class="fas fa-sync-alt"></i> Recarregar
+            </button>
+            <button onclick="openProjectFullscreen()">
+              <i class="fas fa-expand"></i> Tela Cheia
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="popup-footer">
+      <div class="contact-section">
+        <h3>Entre em contato com o dono</h3>
+        <div class="contact-link">
+          <a href="mailto:contato@exemplo.com">
+            <i class="fas fa-envelope"></i> contato@exemplo.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
