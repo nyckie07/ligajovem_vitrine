@@ -1091,13 +1091,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-
-
-
-
-
-
-
         /*seção de Contato e Compartilhamento */
         .contact-section {
             margin-bottom: 20px;
@@ -2157,8 +2150,8 @@
                 width: 100%;
                 text-align: left;
                 padding: 0;
-                max-width: 85%; /* NOVO: Limita a largura para criar mais linhas */
-                margin: 0 auto; /* NOVO: Centraliza o bloco de texto */
+                max-width: 85%; 
+                margin: 0 auto; /*centraliza o bloco de texto*/
             }
             
             .home-img {
@@ -2170,20 +2163,20 @@
             .home-content h3 {
                 font-size: 1.5rem;
                 margin-bottom: 0.5rem;
-                max-width: 100%; /* Garante que os títulos usem toda a largura disponível */
+                max-width: 100%; 
             }
             
             .home-content h1 {
                 font-size: 2rem;
                 margin-bottom: 0.5rem;
-                max-width: 100%; /* Garante que o título principal use toda a largura */
+                max-width: 100%; 
             }
             
             .home-content p {
                 font-size: 0.95rem;
                 line-height: 1.5;
                 text-align: justify;
-                max-width: 100%; /* Texto ocupa 100% da largura limitada do container */
+                max-width: 100%;
                 margin-bottom: 0.8rem;
                 text-justify: inter-word;
             }
@@ -2350,24 +2343,23 @@
 
         @media (max-width: 1200px) {
             .about {
-                flex-direction: column;
-                text-align: center;
-                gap: 2rem;
-            }
-            
-            .about-content {
-                max-width: 90%;
+                gap: 3rem;
+                padding: 6rem 5% 4rem;
             }
             
             .heading {
-                text-align: center;
+                font-size: 3rem;
             }
             
-            .heading::after {
-                left: 50%;
-                transform: translateX(-50%);
+            .about-content h3 {
+                font-size: 2rem;
+            }
+            
+            .about-img img {
+                max-width: 90%;
             }
         }
+
 
         @media (max-width: 868px) {
             .about {
